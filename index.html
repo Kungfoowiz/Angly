@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Angly - angular study</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+
+    <script src="js/myApplication.js" type="text/javascript"></script>
+
+    <script src="js/myApp2.js" type="text/javascript"></script>
+    <script src="js/myApp2Controller.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="main-heading">Playing with AngularJS, Bootstrap and jQuery...</h1>
+    </header>
+
+    <article class="container-fluid main">
+
+
+        <div class="row" ng-app="" ng-init="nickname = 'kungfoowiz'">
+
+            <div class="content col-xs-3">
+                <input type="text" name="name" ng-model="name" placeholder="Please enter your name?" />
+            </div>
+
+            <div class="content col-xs-3 highlight">
+                Some placeholder text here...
+            </div>
+
+            <div class="content col-xs-3">
+                <p>Your name is <span ng-bind="name"></span></p>
+            </div>
+
+            <div class="content col-xs-3 highlight">
+                <p>My nickname is ...</p>
+                <p ng-bind="nickname"></p>
+            </div>
+
+        </div>
+
+
+        <div class="row myApp" ng-app="myApplication" ng-controller="myController">
+
+            <div class="content col-xs-3">
+                <p>The sum of 10 + 7 = {{ 10 + 7 }}</p>
+            </div>
+
+            <div class="content col-xs-3" ng-init="number = 22">
+                <p>The number I am thinking of is... {{ number }}</p>
+            </div>
+
+            <div class="content col-xs-3">
+                <p>First name is {{firstName}}</p>
+                <p>Last name is {{lastName}}</p>
+                <p>Nickname is {{nickname}}</p>
+            </div>
+
+            <div class="content col-xs-3">
+                <p>5 + 1 = </p>
+                <p ng-bind="{{5 + 1}}"></p>
+            </div>
+
+        </div>
+
+
+        <div class="row myApp" ng-app="" ng-init="myColour = 'coral'; firstName = 'Joe'; lastName = 'Doe'; person = {nickname:'kungfoowiz'}; secrets = [1,22, 41]">
+
+            <div class="content col-xs-3">
+                <label for="colourChanger">Type in a css colour...</label>
+                <input name="colourChanger" type="text" ng-model="myColour" style="background-color: {{myColour}};" />
+            </div>
+
+            <div class="content col-xs-3" ng-init="price = 10; quantity = 2;">
+                <p>Price per unit = {{price}}</p>
+                <p>Quantity wanted = {{quantity}}</p>
+                <p>Cost = {{price * quantity}}</p>
+            </div>
+
+            <div class="content col-xs-3">
+                <p>My name is {{firstName + " " + lastName}}.</p>
+                <p ng-bind="'Using ng-bind: My name is ' + firstName + ' ' + lastName + '.'"></p>
+                <p>As a javascript/ng object: person.nickname = {{person.nickname}}.</p>
+                <p ng-bind="'As a javascript/ng object and using ng-bind: person.nickname = ' + person.nickname + '.'"></p>
+            </div>
+
+            <div class="content col-xs-3">
+                <p>Secret number = {{secrets[2]}}.</p>
+                <p ng-bind="'Secret number using ng-bind = ' + secrets[1] + '.'"></p>
+            </div>
+
+        </div>
+
+
+        <div class="row myApp" ng-app="myApp2" ng-controller="myApp2Controller" 
+             ng-init="students = [{name: 'Jani', country: 'Norway'}, {name: 'Hege', country: 'Sweden'}, {name: 'Kai', country: 'Denmark'}];">
+
+            <div class="content col-xs-3">
+                <p>{{ firstPart + lastPart }}</p>
+            </div>
+
+            <div class="content col-xs-3">
+                <p my-App2-Directive></p>
+                <my-App2-Directive></my-App2-Directive>
+                <p class="my-app2-directive"></p>
+                <!-- directive: my-app2-directive -->
+            </div>
+
+            <div class="content col-xs-3">
+                <ul>
+                    <li ng-repeat="student in students">
+                        {{ student.name + ", " + student.country }}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="content col-xs-3">
+            </div>
+
+        </div>
+
+
+    </article>
+
+</body>
+
+</html>
