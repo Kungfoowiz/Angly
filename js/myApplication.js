@@ -7,6 +7,10 @@ $(function () {
 
     angular.bootstrap(document.getElementsByClassName("myApp")[2], ["myApp2"]);
 
+    angular.bootstrap(document.getElementsByClassName("myApp")[3]);
+
+    angular.bootstrap(document.getElementsByClassName("myApp")[4], ["myApp3"]);
+
 });
 
 

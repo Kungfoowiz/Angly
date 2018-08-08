@@ -18,6 +18,9 @@
 
     <script src="js/myApp2.js" type="text/javascript"></script>
     <script src="js/myApp2Controller.js" type="text/javascript"></script>
+
+    <script src="js/myApp3.js" type="text/javascript"></script>
+    <script src="js/myApp3Controller.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -103,7 +106,7 @@
         </div>
 
 
-        <div class="row myApp" ng-app="myApp2" ng-controller="myApp2Controller" 
+        <div class="row myApp" ng-app="myApp2" ng-controller="myApp2Controller"
              ng-init="students = [{name: 'Jani', country: 'Norway'}, {name: 'Hege', country: 'Sweden'}, {name: 'Kai', country: 'Denmark'}];">
 
             <div class="content col-xs-3">
@@ -126,12 +129,70 @@
             </div>
 
             <div class="content col-xs-3">
+                <p ng-bind="something"></p>
+                <input ng-model="something" />
+                <h4>{{something}}</h4>
+            </div>
+
+        </div>
+
+
+
+        <div class="row myApp" ng-app="">
+
+            <div class="content col-xs-3">
+                <form name="myForm">
+                    <label for="myEmail">Enter a valid email address:</label>
+                    <ol>
+                        <li>Valid? {{myForm.myEmail.$valid}}</li>
+                        <li>Dirty? {{myForm.myEmail.$dirty}}</li>
+                        <li>Touched? {{myForm.myEmail.$touched}}</li>
+                    </ol>
+                    <input type="email" name="myEmail" class="myEmail" ng-model="text" required />
+                    <div ng-show="myForm.myEmail.$error.email"><span class="text-warning">Not a valid email address.</span></div>
+                </form>
+            </div>
+
+            <div class="content col-xs-3">
+            </div>
+
+            <div class="content col-xs-3">
+            </div>
+
+            <div class="content col-xs-3">
+            </div>
+
+        </div>
+
+
+
+
+        <div class="row myApp top-gap" ng-app="myApp3" ng-controller="myApp3Controller">
+
+            <div class="content col-xs-3">
+                <input ng-model="randomText" />
+
+                <button ng-click="addJunk();">Add junk?</button>
+            </div>
+
+            <div class="content col-xs-3">
+            </div>
+
+            <div class="content col-xs-3">
+            </div>
+
+            <div class="content col-xs-3">
             </div>
 
         </div>
 
 
     </article>
+
+
+    <footer>
+
+    </footer>
 
 </body>
 

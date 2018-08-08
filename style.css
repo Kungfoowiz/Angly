@@ -30,3 +30,25 @@ html, body {
 }
 
 
+footer {
+    height: 100px;
+}
+
+
+.myEmail.ng-invalid {
+    /* background-color: lightcoral; */
+}
+
+/* ng-not-empty ng-touched ng-untouched ng-valid ng-invalid ng-dirty ng-pending ng-pristine */
+.myEmail.ng-pristine {
+    background-color: cornflowerblue;
+}
+
+
+.top-gap {
+    margin-top: 30px;
+}
+
+
+
+
