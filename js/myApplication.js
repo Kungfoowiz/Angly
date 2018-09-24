@@ -1,6 +1,9 @@
 
 $(function () {
 
+    // First one gets bound automatically by Angular.
+
+
     angular.bootstrap(document.getElementsByClassName("myApp")[0], ["myApplication"]);
 
     angular.bootstrap(document.getElementsByClassName("myApp")[1]);
@@ -12,6 +15,8 @@ $(function () {
     angular.bootstrap(document.getElementsByClassName("myApp")[4], ["myApp3"]);
 
     angular.bootstrap(document.getElementsByClassName("myApp")[5], ["myApp4"]);
+
+    angular.bootstrap(document.getElementsByClassName("myApp")[6], ["myApp5"]);
 
 });
 

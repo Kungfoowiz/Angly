@@ -24,6 +24,9 @@
 
     <script src="js/myApp4.js" type="text/javascript"></script>
     <script src="js/myApp4Controller.js" type="text/javascript"></script>
+
+    <script src="js/myApp5.js" type="text/javascript"></script>
+    <script src="js/myApp5Controller.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -215,6 +218,37 @@
                     <li ng-repeat="item in names">
                         {{item.name + " lives in " + item.country + "."}}
                     </li>
+                </ul>
+            </div>
+
+            <div class="content col-xs-3">
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="row myApp top-gap" ng-app="myApp5" ng-controller="myApp5Controller">
+
+            <div class="content col-xs-3">
+                <p>Favourite car: {{favouriteCar}}</p>
+            </div>
+
+            <div class="content col-xs-3">
+                <input ng-model="magicNumber" />
+
+                <p>Your magic number is <span ng-bind="magicNumber"></span> ... </p>
+            </div>
+
+            <div class="content col-xs-3">
+                <p>Super </p>
+                <ul>
+                    <li ng-repeat="hero in superHeroes">{{hero}}</li>
                 </ul>
             </div>
 
