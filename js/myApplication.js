@@ -27,12 +27,17 @@ $(function () {
 
 var myApplication = angular.module("myApplication", []);
 
+myApplication.run(function ($rootScope) {
+    $rootScope.colour = "#293370";
+});
+
 myApplication.controller("myController",
 
     function ($scope) {
         $scope.firstName = "Edward";
         $scope.lastName = "Davies";
         $scope.nickname = "kungfoowiz";
+        $scope.colour = "#35f139";
     }
 
 );

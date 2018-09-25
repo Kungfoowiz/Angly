@@ -51,4 +51,19 @@ footer {
 
 
 
+.little-box {
+    width: 130px;
+    height: 25px;
 
+    background-color: #d0304e;
+
+    position: relative;
+    left: 10px;
+
+    padding-left: 3px;
+
+    line-height: 25px;
+    color: #ffdd98;
+    font-style: italic;
+    font-family: sans-serif;
+}

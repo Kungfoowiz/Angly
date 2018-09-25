@@ -60,25 +60,34 @@
         </div>
 
 
-        <div class="row myApp" ng-app="myApplication" ng-controller="myController">
+        <div class="row myApp" ng-app="myApplication">
 
-            <div class="content col-xs-3">
-                <p>The sum of 10 + 7 = {{ 10 + 7 }}</p>
+            <div>
+                <div class="little-box" style="background-color: {{colour}}">$rootScope.colour</div>
             </div>
 
-            <div class="content col-xs-3" ng-init="number = 22">
-                <p>The number I am thinking of is... {{ number }}</p>
-            </div>
+            <div ng-controller="myController">
 
-            <div class="content col-xs-3">
-                <p>First name is {{firstName}}</p>
-                <p>Last name is {{lastName}}</p>
-                <p>Nickname is {{nickname}}</p>
-            </div>
+                <div class="content col-xs-3">
+                    <p>The sum of 10 + 7 = {{ 10 + 7 }}</p>
+                </div>
 
-            <div class="content col-xs-3">
-                <p>5 + 1 = </p>
-                <p ng-bind="{{5 + 1}}"></p>
+                <div class="content col-xs-3" ng-init="number = 22">
+                    <p>The number I am thinking of is... {{ number }}</p>
+                </div>
+
+                <div class="content col-xs-3">
+                    <p>First name is {{firstName}}</p>
+                    <p>Last name is {{lastName}}</p>
+                    <p>Nickname is {{nickname}}</p>
+                </div>
+
+                <div class="content col-xs-3">
+                    <p>5 + 1 = </p>
+                    <p ng-bind="{{5 + 1}}"></p>
+                    <div class="little-box" style="background-color: {{colour}}">$scope.colour</div>
+                </div>
+
             </div>
 
         </div>
