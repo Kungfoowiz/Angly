@@ -251,17 +251,54 @@
             <div class="content col-xs-3">
                 <input ng-model="magicNumber" />
 
-                <p>Your magic number is <span ng-bind="magicNumber"></span> ... </p>
+                <p>Your magic number is <span ng-bind="magicNumber | number:2"></span> ... </p>
+
+                <pre>{{ {'name':'Edward', 'food':'pizza'} | json:10 }}</pre>
+
+                <p>{{'Whoooaoaoaoaoaooaoaoaoaoa!' | myFormat}}</p>
             </div>
 
             <div class="content col-xs-3">
-                <p>Super </p>
+                <p>Superheroes</p>
                 <ul>
-                    <li ng-repeat="hero in superHeroes">{{hero}}</li>
+                    <li ng-repeat="hero in superHeroes | orderBy:0 | filter:'er'">{{hero}}</li>
                 </ul>
             </div>
 
             <div class="content col-xs-3">
+                <h4>Angular Filters</h4>
+                <p>{{someText}}</p>
+                <p>uppercase: {{someText | uppercase}}</p>
+                <p>lowercase: {{someText | lowercase}}</p>
+                <p>currency: {{cost | currency}}</p>
+
+                <p>filter (ng-model) <input type="text" ng-model="nameFilter" placeholder="Type here to filter..." /></p>
+                <p>limitTo (Char limit) <input type="text" ng-model="charLimit" /></p>
+                <p>lowercase (All lowercase) <input type="checkbox" ng-model="allLower" /></p>
+                <p>uppercase (All uppercase column titles) <input type="checkbox" ng-model="uppercaseCols" /></p>
+                <table class="table medium-box">
+                    <tr>
+                        <th class="clickable" ng-click="sortBy('name')">
+                            <span ng-if="uppercaseCols">{{'Name' | uppercase}}</span>
+                            <span ng-if="uppercaseCols === false">Name</span>
+                        </th>
+                        <th class="clickable" ng-click="sortBy('rank')">
+                            <span ng-if="uppercaseCols">{{'Rank' | uppercase}}</span>
+                            <span ng-if="uppercaseCols === false">Rank</span>
+                        </th>
+                    </tr>
+
+                    <!--<ul class="medium-box">-->
+                    <!--<li ng-repeat="hero in superHeroes | orderBy:0 | filter:nameFilter">{{hero}}</li>-->
+                    <!--</ul>-->
+
+                    <tr ng-repeat="hero in superHeroes | orderBy:sortOrder | filter:nameFilter">
+                        <td ng-if="allLower">{{hero.name | limitTo:charLimit | lowercase}}</td>
+                        <td ng-if="allLower === false">{{hero.name | limitTo:charLimit}}</td>
+                        <td>{{hero.rank}}</td>
+                    </tr>
+
+                </table>
             </div>
 
         </div>

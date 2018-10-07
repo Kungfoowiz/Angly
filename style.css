@@ -67,3 +67,20 @@ footer {
     font-style: italic;
     font-family: sans-serif;
 }
+
+.medium-box {
+    min-height: 200px;
+
+    background-color: #a0a2a9;
+
+    padding-top: 11px;
+}
+
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+.table {
+    padding: 5px;
+}
